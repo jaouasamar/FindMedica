@@ -1,0 +1,61 @@
+
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="card-item" *ngFor="let menu of menuProperties">
+    <h2 class="card-header" id="flush-heading{{menu.id}}">
+      <button class="btn text-primary  collapsed  " type="button" data-bs-toggle="collapse"
+      [attr.data-bs-target]="'#flush-collapse' + menu.id"
+      aria-expanded="false" aria-controls="flush-collapseOne">
+      <i class="{{menu.icon}}"></i>&nbsp;
+       {{menu.titre}}
+       </button>
+    </h2>
+    <div id="flush-collapse{{menu.id}}" class="accordion-collapse collapse"
+     [attr.aria-labelledby]="'flush-heading'+ menu.id" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let sousMenu of menu.sousMenu" [ngClass]="{'text-white bg-primary': sousMenu.active, '': !sousMenu.active}">
+            <a href="javascript:void(0);" (click)="navigate(sousMenu)" style="color: inherit;">
+              <i class="{{sousMenu.icon}}"></i>&nbsp;
+              {{sousMenu.titre}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="card" *ngFor="let menu of menuProperties">
+    <div class="card-header" id="menu{{menu.id}}">
+      <h2 class="mb-0">
+        <button class="accordion-button collapsed" type="button"
+         data-toggle="collapse" [attr.data-target]="'#collapse' + menu.id"
+         aria-expanded="true" aria-controls="collapseOne">
+          <i class="{{menu.icon}}"></i>&nbsp;
+          {{menu.titre}}
+        </button>
+      </h2>
+    </div>
+<div id="collapse{{menu.id}}" class=" collapse"
+[attr.aria-labelledby]="'menu' + menu.id" data-parent="#accordionFlushExample">
+  <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let sousMenu of menu.sousMenu" [ngClass]="{'text-white bg-primary' : sousMenu.active, '': !sousMenu.active}">
+            <a href="javascript:void(0);" (click)="navigate(sousMenu)" style="color: inherit;">
+              <i class="{{sousMenu.icon}}"></i>&nbsp;
+              {{sousMenu.titre}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div-->
+
+
+
+
+
+

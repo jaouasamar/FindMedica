@@ -1,0 +1,71 @@
+  <div class="col-md-12  text-center">
+    <img src= "assets/med.jpg" class="rounded-circle" width="200px" height="200px" />
+  </div>
+  <hr>
+  <div class="col-md-12 m-3">
+      <h2><i class="bi bi-info-circle-fill"></i>&nbsp;Information du médicament</h2>
+  </div>
+  <div class="col-md-12 ">
+      <div class=" form-floatingform">
+        <div class="row m-3">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-floating mb-3">
+              <input type="text" name="Nom Medicament" class="form-control"
+               id="floatingInput" [(ngModel)]= "med.nom">
+              <label for="floatingInput">Nom du Medicament</label>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-floating mb-3">
+            <input type="text" name="Prix Medicament"class="form-control"
+            id="floatingInput" [(ngModel)]= "med.prix">
+            <label for="floatingInput">Prix</label>
+          </div>
+        </div>
+      </div>
+        <div class=" form-floatingform">
+          <div class="row m-3">
+           <div class="col-md-6 col-sm-12">
+            <div class="form-floating mb-3">
+              <input type="text" name="Indications Medicament" class="form-control"
+              id="floatingInput" [(ngModel)]= "med.type_de_maladies">
+              <label for="floatingInput">Indications</label>
+            </div>
+          </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-floating mb-3">
+                <input type="text" name="Quantité Medicament" class="form-control"
+                 id="floatingInput" [(ngModel)]= "med.quantite">
+                <label for="floatingInput">Quantité</label>
+             </div>
+            </div>
+        </div>
+        <div class="form-floating m-3">
+          <select class="form-select" name="pharmacie" [(ngModel)]= "pharma.id">
+            <option selected>Selectionnez une pharmacie</option>
+            <option *ngFor="let phar of listPharma"[value]="phar.id">{{phar.nom}}</option>
+          </select>
+        </div>
+        </div>
+      </div>
+
+     <div class="col-md-12 text-end">
+      <button class=" btn btn-danger mr-3" (click)= "cancelClick()">
+      <i class="bi bi-x"></i>&nbsp;
+     Annuler
+      </button>
+      <button class=" btn btn-primary m-3" (click)= "save()">
+      <i class="bi bi-save"></i>&nbsp;
+      Enregitrer
+      </button>
+  </div>
+
+
+<!--div class="col md-6 sm-12">
+            <select (change)= "onItemChange()" class="form-control" name="ville" [(ngModel)]="ville">
+              <option selected>Selectionner une ville</option>
+              <option *ngFor ="let ville of listVille" >{{ville.nom}}</option>
+            </select>
+            <p *ngIf= "ville">Selectionnez une ville</p>
+            </div-->
+

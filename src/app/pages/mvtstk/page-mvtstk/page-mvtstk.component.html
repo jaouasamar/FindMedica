@@ -1,0 +1,58 @@
+<div class="col">
+  <div class="row m-3">
+    <div class="col-md-8 p-0">
+      <h1>Mouvements du stock</h1>
+    </div>
+    <div class="col-md-4 p-0 text-right">
+      <app-boutons-actions
+      [isImporterVisible]=false
+      [isNouveauVisible]=false
+      ></app-boutons-actions>
+    </div>
+  </div>
+  <div class="col">
+    <div class="accordion" id="accordionExample1">
+      <div class="card">
+        <h2 class="card-body" id="headingOne">
+          <button class="accordion-button" type="button"
+          data-bs-toggle="collapse"
+           data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <app-detail-mvtstk-med></app-detail-mvtstk-med>
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample1"style= "max-height:200 px; overflow-y:scroll">
+          <div class="accordion-body" >
+            <app-detail-mvt-stk></app-detail-mvt-stk>
+            <app-detail-mvt-stk></app-detail-mvt-stk>
+            <app-detail-mvt-stk></app-detail-mvt-stk>
+            <app-detail-mvt-stk></app-detail-mvt-stk>
+            <app-detail-mvt-stk></app-detail-mvt-stk>
+            <app-detail-mvt-stk></app-detail-mvt-stk>
+        </div>
+        </div>
+        <div class="card-item">
+          <h2 class="card-header" id="headingTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+              <app-detail-mvtstk-med></app-detail-mvtstk-med>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body" style= "max-height:200 px; overflow-y:scroll">
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+          </div>
+      </div>
+    </div>
+  </div>
+   <div class="row mb-3">
+    <div class=" col-md-12 text-center">
+      <app-pagination></app-pagination>
+    </div>
+  </div>
+
+</div>
