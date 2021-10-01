@@ -45,7 +45,9 @@
         <i class="bi bi-pencil"></i>&nbsp;Modifier</button>
     </div>
     <div class="col-md-4">
-      <button type="button" class="btn btn-outline-danger ">
+      <button type="button" class="btn btn-outline-danger "
+      data-bs-toggle="modal" data-bs-target="#modaldeleteMed"
+     (click)="selectMedToDelId(med.id)">
         <i class="bi bi-trash"></i>&nbsp;Supprimer</button>
     </div>
     <div class="col-md-4">
@@ -53,5 +55,32 @@
         <i class="bi bi-list"></i>&nbsp;Details</button>
     </div>
     </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modaldeleteMed" data-bs-backdrop="static"
+ data-bs-keyboard="false" tabindex="-1" aria-labelledby="modaldeleteMedLabel"
+ aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+         aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       Etes vous sur de vouloir supprimer ce medicament?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          <i class="bi bi-slash-circle"></i>
+          Annuler
+        </button>
+        <button type="button" class="btn btn-danger"(click)="confirmerSupp()" >
+          <i class="bi bi-trash"></i>
+          Confirmer
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 

@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="form-floating m-3">
-          <select class="form-select" name="pharmacie" [(ngModel)]= "pharma.id">
+          <select class="form-select" name="pharmacie" [(ngModel)]= "med.pharmacie.id">
             <option selected>Selectionnez une pharmacie</option>
             <option *ngFor="let phar of listPharma"[value]="phar.id">{{phar.nom}}</option>
           </select>

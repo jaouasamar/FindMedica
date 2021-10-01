@@ -24,6 +24,7 @@ export class NouveauMedicaComponent implements OnInit {
   listPharma:Array<Pharmacie>=[];
   med:Medicament=new Medicament();
   pharma:Pharmacie=new Pharmacie();
+   idMed=this.activateRouter.snapshot.params.idMed;
 
 
   ngOnInit(): void {
@@ -35,11 +36,10 @@ export class NouveauMedicaComponent implements OnInit {
    alert(error.message);
   });
 
-  const idMed = this.activateRouter.snapshot.params.idMed;
-  if(idMed)
+
+  if(this.idMed)
   {
-    console.log("Samar");
-    this.medServ.getById(idMed)
+    this.medServ.getById(this.idMed)
     .subscribe(data=>{
       this.med=data;
       this.pharma=this.med.pharmacie;
@@ -56,12 +56,20 @@ export class NouveauMedicaComponent implements OnInit {
     this.router.navigate(['medicament']);
   }
   save():void{
-    this.med.pharmacie=this.pharma;
-    console.log(this.med);
-    this.medServ.post(this.med).subscribe(
+    if(this.idMed)
+    {this.medServ.update(this.med).subscribe(
       data=>{console.log(data);
         this.router.navigate(['medicament'])},
       error=>console.log(error));
+    }
+    else
+    {
+      this.medServ.post(this.med).subscribe(
+        data=>{console.log(data);
+          this.router.navigate(['medicament'])},
+        error=>console.log(error));
+    }
+
   }
 
   /*onItemChange()

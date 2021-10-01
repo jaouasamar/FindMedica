@@ -30,7 +30,7 @@ export class MedicamentServiceService {
     return this.httpC.put<any>(this.url,medica);
   }
 
-  public delete(id:Number):Observable<any>{
+  public delete(id?:number):Observable<any>{
     return this.httpC.delete<any>(this.url+'/'+id);
   }
 

@@ -3,7 +3,7 @@ import { Pharmacie } from "./pharmacie.model";
 import { Ville } from "./ville.model";
 
 export class Medicament {
-  id:Number | undefined;
+  id ?: number;
 	nom:String | undefined;
 	prix:Number | undefined;
 	quantite:Number| undefined;
